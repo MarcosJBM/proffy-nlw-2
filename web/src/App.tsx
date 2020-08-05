@@ -1,9 +1,11 @@
 import React from 'react';
 
+import './assets/styles/global.css';
+
 const App = () => {
   return (
     <div>
-      <p>Olá Mundo</p>
+      <h1>Hello World</h1>
     </div>
   );
 };
