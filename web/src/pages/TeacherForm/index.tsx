@@ -3,6 +3,7 @@ import React from "react";
 import PageHeader from "../../components/PageHeader";
 import Input from "../../components/Input";
 import TextArea from "../../components/TextArea";
+import Select from "../../components/Select";
 
 import warningIcon from "../../assets/images/icons/warning.svg";
 
@@ -26,7 +27,21 @@ const TeacherForm = () => {
         </fieldset>
         <fieldset>
           <legend>Sobre a aula</legend>
-          <Input name="subject" label="Máteria" />
+          <Select
+            name="subject"
+            label="Máteria"
+            options={[
+              { value: "Artes", label: "Artes" },
+              { value: "Biologia", label: "Biologia" },
+              { value: "Física", label: "Física" },
+              { value: "Química", label: "Química" },
+              { value: "Português", label: "Português" },
+              { value: "Matemática", label: "Matemática" },
+              { value: "Educação Física", label: "Educação Física" },
+              { value: "Geografia", label: "Geografia" },
+              { value: "Hístoria", label: "Hístoria" },
+            ]}
+          />
           <Input name="cost" label="Custo da sua hora por aula" />
         </fieldset>
 
