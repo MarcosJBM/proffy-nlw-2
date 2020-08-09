@@ -2,40 +2,55 @@ import React from "react";
 
 import whatsappIcon from "../../assets/images/icons/whatsapp.svg";
 
+import api from "../../services/api";
+
 import "./styles.css";
 
-const TeacherItem = () => {
+export interface Teacher {
+  id: number;
+  avatar: string;
+  bio: string;
+  cost: number;
+  name: string;
+  subject: string;
+  whatsapp: string;
+}
+
+interface TeacherItemProps {
+  teacher: Teacher
+}
+
+const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
+  function createNewConnection() {
+    api.post('connections', {
+      user_id: teacher.id
+    });
+  };
+
   return (
     <article className="teacher-item">
       <header>
         <img
-          src="https://avatars1.githubusercontent.com/u/67931411?s=400&u=e3c24342e72d189eb67a83305d3ef34562544e70&v=4"
-          alt="Marcos Botene"
+          src={teacher.avatar}
+          alt={teacher.name}
         />
         <div>
-          <strong>Marcos Botene</strong>
-          <span>Química</span>
+          <strong>{teacher.name}</strong>
+          <span>{teacher.subject}</span>
         </div>
       </header>
-      <p>
-        Entusiasta das melhores tecnologias de quimica avançada.
-        <br />
-        <br />
-        Entusiasta das melhores tecnologias de quimica avançada.Entusiasta das
-        melhores tecnologias de quimica avançada.Entusiasta das melhores
-        tecnologias de quimica avançada.Entusiasta das melhores tecnologias de
-        quimica avançada.Entusiasta das melhores tecnologias de quimica
-        avançada.
-      </p>
+
+      <p>{teacher.bio}</p>
+
       <footer>
         <p>
           Preço/Hora
-          <strong>R$ 80,00</strong>
+          <strong>R$ {teacher.cost}</strong>
         </p>
-        <button type="button">
+        <a onClick={createNewConnection} href={`https://wa.we/${teacher.whatsapp}`}>
           <img src={whatsappIcon} alt="Whatsapp" />
           Entrar em contato
-        </button>
+        </a>
       </footer>
     </article>
   );

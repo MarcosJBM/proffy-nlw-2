@@ -1,5 +1,5 @@
 import React, { useState, FormEvent } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 import PageHeader from "../../components/PageHeader";
 import Input from "../../components/Input";
@@ -46,9 +46,10 @@ const TeacherForm = () => {
       })
       .then(() => {
         alert("Cadastro realizado com sucesso");
-        history.push('/');
-      }).catch(() => {
-        alert('Erro no cadastro');
+        history.push("/");
+      })
+      .catch(() => {
+        alert("Erro no cadastro");
       });
   }
 
