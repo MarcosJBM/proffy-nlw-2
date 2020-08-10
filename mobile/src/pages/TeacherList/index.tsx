@@ -1,9 +1,12 @@
 import React from 'react';
 import { View } from 'react-native';
+import PageHeader from '../../components/PageHeader';
 
 const TeacherList = () => {
     return (
-        <View />
+        <View >
+            <PageHeader title="Proffys disponíveis" />
+        </View>
     );
 };
 
