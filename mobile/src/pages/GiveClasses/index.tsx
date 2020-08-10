@@ -10,7 +10,7 @@ import styles from './styles';
 const GiveClasses = () => {
     const navigation = useNavigation();
 
-    function handleGoBack() {
+    function handleNavigateBack() {
         navigation.goBack();
     };
 
@@ -27,7 +27,7 @@ const GiveClasses = () => {
                 </Text>
             </ImageBackground>
 
-            <RectButton onPress={handleGoBack} style={styles.okButton}>
+            <RectButton onPress={handleNavigateBack} style={styles.okButton}>
                 <Text style={styles.okButtonText}>Tudo Bem</Text>
             </RectButton>
         </View>
