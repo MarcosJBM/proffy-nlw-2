@@ -6,9 +6,7 @@ import "./assets/styles/global.css";
 
 const App = () => {
   return (
-    <div>
-      <Routes />
-    </div>
+    <Routes />
   );
 };
 

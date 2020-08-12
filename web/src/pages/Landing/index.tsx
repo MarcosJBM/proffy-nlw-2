@@ -14,10 +14,10 @@ import api from "../../services/api";
 import "./styles.css";
 
 const Landing = () => {
-  const [totalConnections, setTotalConnections] = useState([0]);
+  const [totalConnections, setTotalConnections] = useState(0);
 
   useEffect(() => {
-    api.get("connections").then((response) => {
+    api.get('connections').then((response) => {
       const { total } = response.data;
 
       setTotalConnections(total);
